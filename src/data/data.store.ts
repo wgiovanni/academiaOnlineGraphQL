@@ -1,7 +1,7 @@
-import cursos from './courses.json';
-import estudiantes from './students.json';
+import courses from './courses.json';
+import students from './students.json';
 
 export const database = {
-    cursos,
-    estudiantes
+    courses,
+    students
 }

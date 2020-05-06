@@ -1,6 +1,6 @@
 type Query {
     "Lista de los estudiantes de la academia"
-    students: String
+    students: [Student!]!
 }
 "Información de los estudiantes"
 type Student {
@@ -9,7 +9,7 @@ type Student {
     name: String!
     email: String!
     website: String
-    course: [Course!]!
+    courses: [Course!]!
 }
 
 type Course {

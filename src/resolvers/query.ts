@@ -1,9 +1,9 @@
 import { IResolvers } from 'graphql-tools';
-
+import { database } from '../data/data.store';
 const query : IResolvers = {
     Query: {
-        students():string {
-            return 'Lista de estudiantes';
+        students(): any {
+            return database.students;
         }
     }
 }
