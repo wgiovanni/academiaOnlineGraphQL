@@ -34,6 +34,31 @@ const mutation : IResolvers = {
                 teacher: '',
                 reviews: [],
             }
+        },
+        courseEdit(__:void, { course }): any {
+            const elementExist = _.findIndex(database.courses, function(o) {
+                return o.id === course.id;
+            });
+
+            if(elementExist > -1) {
+                const valorations = database.courses[elementExist].reviews;
+                course.reviews = valorations;
+                database.courses[elementExist] = course;
+                return course;
+            }
+
+            return {
+                id: '-1',
+                title: `El curso no existe en la base de datos`,
+                description: '',
+                clases: -1,
+                time: 0.0,
+                level: 'ALL',
+                logo: '',
+                path: '',
+                teacher: '',
+                reviews: [],
+            }
         }
     }
 }
